@@ -14,7 +14,7 @@ module.exports = {
 
   run: async (client, message, args, embed) => {
     if (!message.member.hasPermission("MOVE_MEMBERS")) return;
-    let channel = message.guild.channels.cache.get(args[0]) || message.member.voice.channel;
+    const channel = message.guild.channels.cache.get(args[0]) || message.member.voice.channel;
     if (!channel) return message.channel.send(embed.setDescription("Bir kanal ID girmeli ya da bir sesli kanalda bulunmalısın!"));
     channel.members.filter((x) => !x.hasPermission("ADMINISTRATOR"))
       .forEach((x, index) => {
