@@ -2,8 +2,6 @@ const { Client, Collection } = require("discord.js");
 const client = (global.client = new Client({ fetchAllMembers: true }));
 const settings = require("./src/configs/settings.json");
 const ayar = require("./src/configs/config.json");
-const bannedTag = require("./src/schemas/bannedTag");
-const moment = require("moment");
 client.commands = new Collection();
 client.aliases = new Collection();
 client.cooldown = new Map();
@@ -20,16 +18,16 @@ client
 
   client.on("ready", () => {
     client.channels.cache.get("BOTUN GİRECEĞİ SESLİ KANAL").join();
-   })
+   });
 
    
 client.on ( "ready" , () => {
   console.log ( "Başarıyla", client.user.username + "İsmi İle Giriş Yapıldı!" );
-  console.log("Developed by Aspect")
+  console.log("Developed by Aspect");
 } );
 client.on("ready", async () => {
 client.user.setPresence({ activity: { name: settings.botdurum }, status: "dnd" });
-})
+});
 
 
 //-----------------------TAG-ROL----------------------\\
