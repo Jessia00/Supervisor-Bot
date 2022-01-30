@@ -32,7 +32,7 @@ client.user.setPresence({ activity: { name: settings.botdurum }, status: "dnd" }
 
 //-----------------------TAG-ROL----------------------\\
 
-client.on("userUpdate", async (stg, yeni) => {
+client.on("userUpdate", async (stg, yeni,message) => {
   var member = message.mentions.members.first();
   var sunucu = client.guilds.cache.get("SUNUCU İD GİR");
   var uye = sunucu.members.cache.get(yeni.id);
