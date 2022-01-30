@@ -21,7 +21,7 @@ run: async (client, message, args) => {
     return };
     const uye = message.guild.members.cache.get(message.author.id);
     const isim = args.filter(arg => isNaN(arg)).map(arg => arg.charAt(0).replace('i', "İ").toUpperCase()+arg.slice(1)).join(" ");
-    let boost;
+    let boostt;
     if (!isim) 
     {
     message.react(ayar.emojis.cross);
