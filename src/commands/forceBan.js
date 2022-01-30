@@ -22,7 +22,7 @@ module.exports = {
   run: async (client, message, args, embed) => {
     if (message.guild.owner.id !== message.author.id && !settings.owners.includes(message.author.id)) return;
     if (!args[0]) return message.channelsend(embed.setDescription("Bir üye belirtmelisin!"));
-    const user = message.mentions.users.first() || await client.fetchUser(args[0]);
+    const user = message.mentions.users.first() ||await client.fetchUser(args[0]);
     if (!user) return message.channel.send(embed.setDescription("Böyle bir kullanıcı bulunamadı!"));
     const ban = await forceBans.findOne({ guildID: message.guild.id, userID: user.id });
     if (ban) return message.channel.send(embed.setDescription("Bu üye zaten banlı!"));
@@ -45,12 +45,12 @@ module.exports = {
 ${member ? member.toString() : user.username} üyesi **kalıcı olarak** banlandı!
 
 Ceza ID: \`#${penal.id}\`
-Banlanan Üye: ${member ? member.toString() : ""} \`(${user.username.replace(/\`/g, "")} - ${user.id})\`
-Banlayan Yetkili: ${message.author} \`(${message.author.username.replace(/\`/g, "")} - ${message.author.id})\`
+Banlanan Üye: ${member ? member.toString() : ""} \`(${user.username.replace(/`/g, "")} - ${user.id})\`
+Banlayan Yetkili: ${message.author} \`(${message.author.username.replace(/`/g, "")} - ${message.author.id})\`
 Ban Tarihi: \`${moment(Date.now()).format("LLL")}\`
 Ban Sebebi: \`${reason}\`
       `)
-      .setImage(gifs.random())
+      .setImage(gifs.random());
     message.guild.channels.cache.get(conf.penals.ban.log).send(log);
   },
 };
