@@ -86,7 +86,6 @@ client.on("userUpdate", async (stg, yeni,message) => {
         });
 
 client.on('clickButton', async (button) => {
-  // Button1
     if (button.id === 'cekilis') {
         if (button.clicker.member.roles.cache.get(ayar.Roles.cekilis)) {
             await button.clicker.member.roles.remove(ayar.Roles.cekilis)
