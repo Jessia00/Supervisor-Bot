@@ -82,15 +82,8 @@ client.on("userUpdate", async (stg, yeni,message) => {
                                  {"type":2,"style":3,"custom_id":"etkinlik","label":"🎉 Etkinlik Katılımcısı"},
                ]}    
 ]}
-        
-
-
-
          })
-
-
         });
-
 
 client.on('clickButton', async (button) => {
   // Button1
