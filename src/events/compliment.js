@@ -1,4 +1,4 @@
-const conf = require("../configs/sunucuayar.json")
+const conf = require("../configs/settings.json")
 const moment = require("moment");
 require("moment-duration-format");
 moment.locale("tr");
