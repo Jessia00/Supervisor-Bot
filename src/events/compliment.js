@@ -2,8 +2,8 @@ const conf = require("../configs/sunucuayar.json")
 const moment = require("moment");
 require("moment-duration-format");
 moment.locale("tr");
-    let iltifatSayi = 0;
-    let iltifatlar = [
+    let complimentNumber = 0;
+    let compliments = [
       "Mucizelerden bahsediyordum. Tam o sırada gözlerin geldi aklıma.",
       "Benim için mutluluğun tanımı, seninle birlikteyken geçirdiğim vakittir.",
       "Mavi gözlerin, gökyüzü oldu dünyamın.",
@@ -56,10 +56,10 @@ moment.locale("tr");
     
     module.exports = async (message) => {
         if (message.channel.id === conf.registration.chatChannels && !message.author.bot) {
-        iltifatSayi++;
-        if (iltifatSayi >= 50) {
-          iltifatSayi = 0;
-          message.channel.send(`${message.author.tag}`,iltifatlar.random());
+        complimentNumbercomplimentNumber++;
+        if (complimentNumber >= 50) {
+          complimentNumber = 0;
+          message.channel.send(`${message.author.tag}`,compliments.random());
         };
       };
     }; 
