@@ -56,7 +56,7 @@ moment.locale("tr");
     
     module.exports = async (message) => {
         if (message.channel.id === conf.registration.chatChannels && !message.author.bot) {
-        complimentNumbercomplimentNumber++;
+        rcomplimentNumber++;
         if (complimentNumber >= 50) {
           complimentNumber = 0;
           message.channel.send(`${message.author.tag}`,compliments.random());
