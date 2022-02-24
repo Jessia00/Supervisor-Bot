@@ -1,4 +1,3 @@
-# Discord Moderation Bot
 
 # Kurulum
 * İlk olarak bilgisayarına [Node JS](https://nodejs.org/en/) indir.
